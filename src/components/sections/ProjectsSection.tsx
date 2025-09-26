@@ -169,7 +169,7 @@ export const ProjectsSection = ({ scrollY }: ProjectsSectionProps) => {
                 size="sm" 
                 className={`w-full border-cyber-${project.color}/30 text-cyber-${project.color} hover:bg-cyber-${project.color}/10 group-hover:shadow-${project.color.includes('cyan') ? 'cyber' : project.color}`}
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
+                {project.status === "Published" && <ExternalLink className="w-4 h-4 mr-2" />}
                 {project.status === "Published" ? "View on Store" : "Coming Soon"}
               </Button>
             </Card>

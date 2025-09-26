@@ -205,7 +205,7 @@ export const ContactSection = ({ scrollY }: ContactSectionProps) => {
       </div>
 
       {/* Footer */}
-      <footer className={`mt-20 pt-12 border-t border-cyber-cyan/20 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'animate-float-up' : 'opacity-0'}`}>
+      <footer className={`mt-20 pt-12 pb-8 border-t border-cyber-cyan/20 text-center transition-all duration-1000 delay-1000 ${isVisible ? 'animate-float-up' : 'opacity-0'}`}>
         <p className="cyber-body text-muted-foreground">
           © 2024 Aamir Zafar. Crafted with 💙 for the gaming universe.
         </p>

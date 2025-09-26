@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TypewriterText } from "@/components/ui/TypewriterText";
-import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -64,16 +64,12 @@ export const HeroSection = ({ scrollY }: HeroSectionProps) => {
           </p>
         </div>
         
-        {/* Call to Action */}
-        <div className={`mb-12 transition-all duration-1000 delay-3000 ${isVisible ? 'animate-float-up' : 'opacity-0'}`}>
-          <Button 
+        {/* Scroll Indicator */}
+        <div className={`animate-bounce transition-all duration-1000 delay-3000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <ChevronDown 
+            className="w-8 h-8 mx-auto text-cyber-cyan animate-glow-pulse cursor-pointer hover:scale-110 transition-transform"
             onClick={scrollToAbout}
-            variant="outline"
-            size="lg"
-            className="glass-card hover-glow border-cyber-cyan/30 text-cyber-cyan hover:text-background hover:bg-cyber-cyan"
-          >
-            Explore My Universe
-          </Button>
+          />
         </div>
         
       </div>
