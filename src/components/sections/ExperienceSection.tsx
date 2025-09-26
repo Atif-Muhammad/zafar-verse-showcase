@@ -22,7 +22,7 @@ const experiences: ExperienceItem[] = [
     type: "work",
     title: "Unity Developer",
     organization: "IgniPulse",
-    period: "Jan 2023 – Jun 2024",
+    period: "Feb 2023 – current",
     description: "Led mobile game development projects from concept to market release, focusing on performance optimization and user engagement.",
     highlights: [
       "Developed and published Track Master and WingRush games",
@@ -37,7 +37,7 @@ const experiences: ExperienceItem[] = [
     type: "work",
     title: "Workflow Automation Specialist",
     organization: "n8n Platform",
-    period: "2023 - Present",
+    period: "March 2024 - Aug 2024",
     description: "Collaborated on advanced app and API integrations, streamlining development workflows and automation processes.",
     highlights: [
       "Designed complex workflow automation systems",
