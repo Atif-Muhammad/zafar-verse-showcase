@@ -22,7 +22,7 @@ const experiences: ExperienceItem[] = [
     type: "work",
     title: "Unity Developer",
     organization: "IgniPulse",
-    period: "Feb 2023 – current",
+    period: "Feb 2024 – current",
     description: "Led mobile game development projects from concept to market release, focusing on performance optimization and user engagement.",
     highlights: [
       "Developed and published Track Master and WingRush games",
@@ -198,7 +198,7 @@ export const ExperienceSection = ({ scrollY }: ExperienceSectionProps) => {
         <div className={`mt-20 transition-all duration-1000 delay-1000 ${isVisible ? 'animate-float-up' : 'opacity-0'}`}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <Card className="glass-card p-6 text-center hover-glow">
-              <div className="cyber-heading text-3xl gradient-text mb-2">2+</div>
+              <div className="cyber-heading text-3xl gradient-text mb-2">1+</div>
               <div className="cyber-body text-sm text-muted-foreground">Years Experience</div>
             </Card>
             
@@ -213,7 +213,7 @@ export const ExperienceSection = ({ scrollY }: ExperienceSectionProps) => {
             </Card>
             
             <Card className="glass-card p-6 text-center hover-glow">
-              <div className="cyber-heading text-3xl gradient-text mb-2">10+</div>
+              <div className="cyber-heading text-3xl gradient-text mb-2">8+</div>
               <div className="cyber-body text-sm text-muted-foreground">Technologies Mastered</div>
             </Card>
           </div>
