@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TypewriterText } from "@/components/ui/TypewriterText";
-import { ChevronDown } from "lucide-react";
+import { ArrowDown, ChevronDown } from "lucide-react";
 
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -65,9 +65,9 @@ export const HeroSection = ({ scrollY }: HeroSectionProps) => {
         </div>
         
         {/* Scroll Indicator */}
-        <div className={`animate-bounce transition-all duration-1000 delay-3000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <ChevronDown 
-            className="w-8 h-8 mx-auto text-cyber-cyan animate-glow-pulse cursor-pointer hover:scale-110 transition-transform"
+        <div className={`animate-bounce transition-all duration-1000 delay-3000 bg-transparent ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <ArrowDown 
+            className="w-12 h-12 p-2 mx-auto rounded-full bg-transparent text-cyber-cyan animate-glow-pulse cursor-pointer hover:scale-110 transition-transform"
             onClick={scrollToAbout}
           />
         </div>
