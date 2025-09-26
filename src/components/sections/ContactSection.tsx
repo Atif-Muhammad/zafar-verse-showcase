@@ -130,7 +130,7 @@ export const ContactSection = ({ scrollY }: ContactSectionProps) => {
           <div className="w-32 h-1 bg-gradient-cyber mx-auto mt-6"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Info */}
           <div className={`space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'animate-slide-left' : 'opacity-0 -translate-x-10'}`}>
             {/* Location Badge */}
@@ -201,83 +201,6 @@ export const ContactSection = ({ scrollY }: ContactSectionProps) => {
             </Card>
           </div>
 
-          {/* Contact Form */}
-          <Card className={`glass-card p-8 hover-glow transition-all duration-1000 delay-600 ${isVisible ? 'animate-slide-right' : 'opacity-0 translate-x-10'}`}>
-            <div className="flex items-center gap-3 mb-6">
-              <MessageSquare className="w-8 h-8 text-cyber-cyan" />
-              <h3 className="cyber-subheading text-2xl text-cyber-cyan">Send a Message</h3>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="cyber-accent text-sm text-foreground mb-2 block">
-                    Name *
-                  </label>
-                  <Input
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Your name"
-                    className="glass-card border-cyber-cyan/30 focus:border-cyber-cyan"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label className="cyber-accent text-sm text-foreground mb-2 block">
-                    Email *
-                  </label>
-                  <Input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="your@email.com"
-                    className="glass-card border-cyber-cyan/30 focus:border-cyber-cyan"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="cyber-accent text-sm text-foreground mb-2 block">
-                  Subject
-                </label>
-                <Input
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  placeholder="Project collaboration, job opportunity..."
-                  className="glass-card border-cyber-cyan/30 focus:border-cyber-cyan"
-                />
-              </div>
-
-              <div>
-                <label className="cyber-accent text-sm text-foreground mb-2 block">
-                  Message *
-                </label>
-                <Textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder="Tell me about your project or opportunity..."
-                  rows={5}
-                  className="glass-card border-cyber-cyan/30 focus:border-cyber-cyan resize-none"
-                  required
-                />
-              </div>
-
-              <Button 
-                type="submit"
-                size="lg"
-                className="w-full glass-card hover-glow border-cyber-cyan/30 text-cyber-cyan hover:bg-cyber-cyan hover:text-background group"
-              >
-                <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                Launch Message
-              </Button>
-            </form>
-          </Card>
         </div>
       </div>
 

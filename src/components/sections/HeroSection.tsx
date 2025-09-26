@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { TypewriterText } from "@/components/ui/TypewriterText";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+
 import heroBg from "@/assets/hero-bg.jpg";
 
 interface HeroSectionProps {
@@ -76,10 +76,6 @@ export const HeroSection = ({ scrollY }: HeroSectionProps) => {
           </Button>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className={`animate-bounce transition-all duration-1000 delay-4000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <ChevronDown className="w-8 h-8 mx-auto text-cyber-cyan animate-glow-pulse" />
-        </div>
       </div>
       
       {/* Grid Pattern Overlay */}

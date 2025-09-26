@@ -170,19 +170,12 @@ export const ProjectsSection = ({ scrollY }: ProjectsSectionProps) => {
                 className={`w-full border-cyber-${project.color}/30 text-cyber-${project.color} hover:bg-cyber-${project.color}/10 group-hover:shadow-${project.color.includes('cyan') ? 'cyber' : project.color}`}
               >
                 <ExternalLink className="w-4 h-4 mr-2" />
-                {project.status === "Published" ? "View on Store" : "Learn More"}
+                {project.status === "Published" ? "View on Store" : "Coming Soon"}
               </Button>
             </Card>
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className={`text-center mt-16 transition-all duration-1000 delay-1000 ${isVisible ? 'animate-float-up' : 'opacity-0'}`}>
-          <Button size="lg" className="glass-card hover-glow border-cyber-cyan/30 text-cyber-cyan hover:bg-cyber-cyan hover:text-background">
-            <Github className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
-          </Button>
-        </div>
       </div>
 
       {/* Background Grid */}
