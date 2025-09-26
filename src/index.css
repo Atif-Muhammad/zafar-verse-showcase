@@ -2,56 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Futuristic Portfolio Design System - Cyberpunk/Glassmorphism Theme
 All colors MUST be HSL.
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Background & Surfaces */
+    --background: 220 25% 5%;
+    --foreground: 180 100% 95%;
+    --surface: 220 20% 8%;
+    --surface-glass: 220 20% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System with Glassmorphism */
+    --card: 220 20% 8%;
+    --card-foreground: 180 100% 95%;
+    --glass-card: 220 30% 10%;
+    --glass-border: 180 100% 50%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Neon Color Palette */
+    --cyber-cyan: 180 100% 50%;
+    --cyber-purple: 280 100% 70%;
+    --cyber-pink: 320 100% 75%;
+    --cyber-orange: 30 100% 65%;
+    --cyber-green: 120 100% 50%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary System (Cyan Focus) */
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 25% 5%;
+    --primary-glow: 180 100% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary System (Purple) */
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 220 25% 5%;
+    --secondary-glow: 280 100% 80%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent System (Pink) */
+    --accent: 320 100% 75%;
+    --accent-foreground: 220 25% 5%;
+    --accent-glow: 320 100% 85%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted & Neutral */
+    --muted: 220 15% 25%;
+    --muted-foreground: 180 20% 70%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Interactive States */
+    --hover-glow: 180 100% 50%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 220 25% 5%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 220 30% 15%;
+    --input: 220 30% 12%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-cyan)), hsl(var(--cyber-purple)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--cyber-cyan) / 0.1), hsl(var(--cyber-purple) / 0.1));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--cyber-pink)), hsl(var(--cyber-orange)));
+    --gradient-glass: linear-gradient(135deg, hsl(var(--glass-card) / 0.8), hsl(var(--surface-glass) / 0.6));
+
+    /* Shadows & Glows */
+    --shadow-cyber: 0 0 30px hsl(var(--cyber-cyan) / 0.3);
+    --shadow-purple: 0 0 30px hsl(var(--cyber-purple) / 0.3);
+    --shadow-pink: 0 0 30px hsl(var(--cyber-pink) / 0.3);
+    --shadow-glass: 0 8px 32px hsl(220 30% 5% / 0.4);
+    --shadow-elevated: 0 20px 60px hsl(220 30% 3% / 0.6);
+
+    /* Animation Variables */
+    --animation-speed: 0.3s;
+    --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -100,6 +133,212 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-rajdhani;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    background: var(--gradient-glass);
+    border: 1px solid hsl(var(--glass-border) / 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Neon Text Effects */
+  .neon-text {
+    text-shadow: 0 0 5px hsl(var(--cyber-cyan)), 
+                 0 0 10px hsl(var(--cyber-cyan)), 
+                 0 0 15px hsl(var(--cyber-cyan));
+  }
+
+  .neon-text-purple {
+    text-shadow: 0 0 5px hsl(var(--cyber-purple)), 
+                 0 0 10px hsl(var(--cyber-purple)), 
+                 0 0 15px hsl(var(--cyber-purple));
+  }
+
+  .neon-text-pink {
+    text-shadow: 0 0 5px hsl(var(--cyber-pink)), 
+                 0 0 10px hsl(var(--cyber-pink)), 
+                 0 0 15px hsl(var(--cyber-pink));
+  }
+
+  /* Hover Glow Effects */
+  .hover-glow {
+    transition: all var(--animation-speed) var(--animation-smooth);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-cyber);
+    transform: translateY(-2px);
+  }
+
+  /* Animated Borders */
+  .border-animated {
+    position: relative;
+    background: linear-gradient(var(--gradient-glass));
+  }
+
+  .border-animated::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: var(--gradient-cyber);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+  }
+
+  /* Particle Background */
+  .particle-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .particle-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(1px 1px at 20px 30px, hsl(var(--cyber-cyan)), transparent),
+      radial-gradient(1px 1px at 40px 70px, hsl(var(--cyber-purple)), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--cyber-pink)), transparent);
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    animation: particle-float 20s linear infinite;
+    opacity: 0.3;
+  }
+
+  /* Typography Classes */
+  .cyber-heading {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+  }
+
+  .cyber-subheading {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .cyber-body {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .cyber-accent {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  /* Animation Keyframes */
+  @keyframes particle-float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 5px hsl(var(--cyber-cyan) / 0.5); }
+    50% { box-shadow: 0 0 20px hsl(var(--cyber-cyan) / 0.8), 0 0 30px hsl(var(--cyber-cyan) / 0.4); }
+  }
+
+  @keyframes float-up {
+    0% { 
+      opacity: 0; 
+      transform: translateY(30px) scale(0.95); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% { 
+      opacity: 0; 
+      transform: translateX(-30px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateX(0); 
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% { 
+      opacity: 0; 
+      transform: translateX(30px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateX(0); 
+    }
+  }
+
+  @keyframes typewriter {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+  @keyframes blink {
+    0%, 50% { border-right-color: transparent; }
+    51%, 100% { border-right-color: hsl(var(--cyber-cyan)); }
+  }
+
+  /* Animation Classes */
+  .animate-float-up {
+    animation: float-up 0.6s var(--animation-bounce) forwards;
+  }
+
+  .animate-slide-left {
+    animation: slide-in-left 0.6s var(--animation-smooth) forwards;
+  }
+
+  .animate-slide-right {
+    animation: slide-in-right 0.6s var(--animation-smooth) forwards;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-typewriter {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--cyber-cyan));
+    white-space: nowrap;
+    animation: typewriter 3s steps(40) forwards, blink 1s infinite;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
